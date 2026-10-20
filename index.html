@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>빌드트러스트 (BuildTrust) — 건축 통합 평가·공유 생태계 플랫폼</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand" onclick="switchTab('buildings')">
+        <div class="brand-logo">🏗️</div>
+        <div>
+          <span class="brand-title">BuildTrust</span>
+          <span class="brand-sub">건축 통합 평가·공유 생태계 플랫폼</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="buildings" onclick="switchTab('buildings')">
+          🏛️ 완공 건축물 & 크레딧
+        </button>
+        <button class="nav-tab" data-tab="technicians" onclick="switchTab('technicians')">
+          👷 기술자 스킬 패스포트
+        </button>
+        <button class="nav-tab" data-tab="global-media" onclick="switchTab('global-media')">
+          🌍 글로벌 건축 기술 Tube/쇼츠
+        </button>
+        <button class="nav-tab" data-tab="materials" onclick="switchTab('materials')">
+          🧱 건축자재 DB & 아카데미
+        </button>
+        <button class="nav-tab" data-tab="inspection" onclick="switchTab('inspection')">
+          🤖 AI 시공검수 & 단가지수
+        </button>
+      </nav>
+
+      <div class="role-switcher">
+        <label for="userRole">현재 접속 모드:</label>
+        <select id="userRole" class="role-select" onchange="onRoleChange(this.value)">
+          <option value="건축주 (발주자)">🏠 건축주 (발주자)</option>
+          <option value="건축 기술자 (목공/타일 등)">🔨 건축 기술자</option>
+          <option value="건축자재 판매업체">🧱 자재 판매업체</option>
+          <option value="건축 관심자 (예비 건축주)">👀 건축 관심자</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- 히어로 배너 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>투명한 기술 검증과 완공 가치 공유, 빌드트러스트</h1>
+        <p>
+          완공 건축물의 모든 공정별 참여 기술자 크레딧과 자재 스펙을 투명하게 기록하고,
+          건축주·동료 기술자·장기 거주(1~3년) 다면 평가 및 세계 각국의 건축 기술을 공유합니다.
+        </p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <div class="num" id="statBuildings">128채</div>
+          <div class="label">크레딧 인증 건축물</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statTechs">1,420명</div>
+          <div class="label">검증된 공정 기술자</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num" id="statVideos">3,850개</div>
+          <div class="label">글로벌 기술 쇼츠·영상</div>
+        </div>
+        <div class="stat-pill">
+          <div class="num">99.2%</div>
+          <div class="label">은폐 공정 사진 인증률</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 메인 컨텐츠 영역 -->
+  <main class="main-container">
+
+    <!-- 1. 완공 건축물 & 크레딧 아카이브 -->
+    <section id="view-buildings" class="section-view active">
+      <div class="section-header">
+        <div>
+          <h2>🏛️ 완공 건축물 크레딧 아카이브 & 오픈하우스</h2>
+          <p>영화 엔딩 크레딧처럼 기초·골조·단열·목공·타일 등 실제 참여한 기술자와 투입 자재를 투명하게 공개하고 다면 평가합니다.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openNewBuildingModal()">+ 새 완공 건축물 등록</button>
+      </div>
+
+      <div class="filter-bar" id="buildingFilterBar">
+        <button class="chip active" onclick="filterBuildings('전체', this)">전체 건축물</button>
+        <button class="chip" onclick="filterBuildings('단독주택', this)">단독/전원주택</button>
+        <button class="chip" onclick="filterBuildings('상가주택', this)">상가/근린생활</button>
+        <button class="chip" onclick="filterBuildings('리모델링', this)">대수선/리모델링</button>
+        <button class="chip" onclick="filterBuildings('패시브하우스', this)">패시브/고단열</button>
+      </div>
+
+      <div class="grid-3" id="buildingGrid"></div>
+    </section>
+
+    <!-- 2. 기술자 스킬 패스포트 -->
+    <section id="view-technicians" class="section-view">
+      <div class="section-header">
+        <div>
+          <h2>👷 기술자 디지털 스킬 패스포트 & 등급(Tier)</h2>
+          <p>현장 GPS/계약 인증 기반 시공 실적, 무하자 기록, 동료 교차 평가, 장기 거주 평점으로 검증된 공정별 기술자입니다.</p>
+        </div>
+        <button class="btn btn-accent" onclick="openApprenticeModal()">🤝 명장-신진 기술자 도제 매칭 지원</button>
+      </div>
+
+      <div class="filter-bar" id="techFilterBar">
+        <button class="chip active" onclick="filterTechs('전체', this)">전체 공정</button>
+        <button class="chip" onclick="filterTechs('목공/골조', this)">목공 / 골조</button>
+        <button class="chip" onclick="filterTechs('단열/방수', this)">단열 / 방수 (은폐공정)</button>
+        <button class="chip" onclick="filterTechs('타일/미장', this)">타일 / 외장 미장</button>
+        <button class="chip" onclick="filterTechs('설비/전기', this)">설비 / 배관 / 전기</button>
+        <button class="chip" onclick="filterTechs('창호/금속', this)">시스템창호 / 금속</button>
+      </div>
+
+      <div class="grid-3" id="techGrid"></div>
+    </section>
+
+    <!-- 3. 글로벌 건축 기술 미디어 허브 (유튜브 / 쇼츠) -->
+    <section id="view-global-media" class="section-view">
+      <div class="section-header">
+        <div>
+          <h2>🌍 글로벌 건축 기술 미디어 허브 (YouTube & Shorts)</h2>
+          <p>세계 각국의 혁신 건축 공법·장인 노하우 영상을 공유하고, 국내 기술자들이 한국 기후/건축법 적용 가능성을 직접 평가합니다.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openAddVideoModal()">🎬 유튜브 / 쇼츠 기술 영상 공유하기</button>
+      </div>
+
+      <div class="filter-bar" id="videoFilterBar">
+        <button class="chip active" onclick="filterVideos('전체', this)">전체 국가/기술</button>
+        <button class="chip" onclick="filterVideos('일본', this)">🇯🇵 일본 (정밀목조·내진)</button>
+        <button class="chip" onclick="filterVideos('독일', this)">🇩🇪 독일 (패시브단열·기밀창호)</button>
+        <button class="chip" onclick="filterVideos('북미', this)">🇺🇸 북미 (경량목구조·자동화장비)</button>
+        <button class="chip" onclick="filterVideos('북유럽', this)">🇸🇪 북유럽 (친환경CLT·모듈러)</button>
+      </div>
+
+      <div class="grid-3" id="videoGrid"></div>
+    </section>
+
+    <!-- 4. 건축자재 쇼룸 & 시공 아카데미 -->
+    <section id="view-materials" class="section-view">
+      <div class="section-header">
+        <div>
+          <h2>🧱 건축자재 실사용 쇼룸 & 공인 시공 아카데미</h2>
+          <p>자재 판매업체의 공식 스펙과 실제 적용된 완공 건축물 사례, 그리고 직접 시공해 본 기술자들의 시공성·내구성 평가를 확인하세요.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openAddMaterialModal()">+ 신규 자재·특수공구 등록 (업체용)</button>
+      </div>
+
+      <div class="filter-bar" id="materialFilterBar">
+        <button class="chip active" onclick="filterMaterials('전체', this)">전체 자재·공구</button>
+        <button class="chip" onclick="filterMaterials('단열/방수재', this)">단열 / 기밀 / 방수재</button>
+        <button class="chip" onclick="filterMaterials('외장/벽돌', this)">외장재 / 벽돌 / 징크</button>
+        <button class="chip" onclick="filterMaterials('창호/유리', this)">시스템창호 / 로이유리</button>
+        <button class="chip" onclick="filterMaterials('해외혁신공구', this)">해외 혁신 시공장비</button>
+      </div>
+
+      <div class="grid-3" id="materialGrid"></div>
+    </section>
+
+    <!-- 5. AI 시공 사전 검수 & 실시간 표준 단가 지수 -->
+    <section id="view-inspection" class="section-view">
+      <div class="section-header">
+        <div>
+          <h2>🤖 AI 시공 품질 사전 검수 & 실시간 건축 단가·노임 지수</h2>
+          <p>은폐 공정 마감 전 필수 체크리스트를 확인하고, 기술 등급별 투명한 노임 단가 및 예상 공사비를 시뮬레이션하세요.</p>
+        </div>
+      </div>
+
+      <div class="split-panel">
+        <!-- 좌측: 공정별 체크리스트 & AI 사진 사전 검수 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="badge badge-blue">초보 건축주 & 현장 감리 필수</span>
+              <span class="badge badge-green" id="checklistProgressBadge">달성률 60%</span>
+            </div>
+            <h3 class="card-title">📋 공정별 은폐 시공 표준 체크리스트 & AI 사진 진단</h3>
+            <p style="font-size: 13px; color: var(--text-sub);">
+              마감 후에는 뜯어볼 수 없는 단열·방수·배관 공정입니다. 각 항목을 클릭해 검수를 완료해야 스마트 에스크로 기성금이 지급됩니다.
+            </p>
+
+            <div class="filter-bar" style="margin-bottom: 10px;">
+              <button class="chip active" onclick="loadChecklist('단열/기밀', this)">단열·기밀 공정</button>
+              <button class="chip" onclick="loadChecklist('방수/배수', this)">욕실·옥상 방수 공정</button>
+              <button class="chip" onclick="loadChecklist('골조/철근', this)">기초·철근 배근 공정</button>
+            </div>
+
+            <div id="checklistContainer"></div>
+
+            <!-- AI 비전 검수 시뮬레이터 -->
+            <div style="background: #eff6ff; border: 1px dashed #3b82f6; border-radius: 10px; padding: 14px; margin-top: 8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <strong style="font-size:13.5px; color:#1e40af;">🔍 AI 현장 사진 시공 불량 사전 감지</strong>
+                <button class="btn btn-primary btn-sm" onclick="runAiInspectionDemo()">샘플 현장 사진 AI 분석 실행</button>
+              </div>
+              <div id="aiInspectionResult" style="font-size:12.5px; color:#334155;">
+                현장 시공 사진을 업로드하거나 우측 버튼을 누르면 AI가 기밀 테이프 들뜸, 단열재 틈새(열교), 방수 도막 불균일 여부를 1차 판독합니다.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 우측: 실시간 기술 등급별 노임 & 단가 계산기 -->
+        <div class="card">
+          <div class="card-body">
+            <div class="badge-row">
+              <span class="badge badge-amber">데이터 기반 깜깜이 견적 해소</span>
+              <span class="badge badge-purple">2026.10 기준 실거래 지수</span>
+            </div>
+            <h3 class="card-title">📊 공정별·기술등급별 표준 노임 지수 & 견적 시뮬레이터</h3>
+            <p style="font-size: 13px; color: var(--text-sub);">
+              기술자는 숙련도(Tier)에 맞는 정당한 대우를 받고, 건축주는 투명한 표준 단가 범위를 확인합니다.
+            </p>
+
+            <table style="width:100%; border-collapse:collapse; font-size:12.5px; margin: 6px 0;">
+              <thead>
+                <tr style="background:#1e293b; color:#fff;">
+                  <th style="padding:8px;">공정 분야</th>
+                  <th style="padding:8px;">인증(Verified) 일당</th>
+                  <th style="padding:8px;">프로(Pro) 일당</th>
+                  <th style="padding:8px;">명장(Master) 일당</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #e2e8f0;">
+                  <td style="padding:8px; font-weight:700;">목공 (내외장/골조)</td>
+                  <td style="padding:8px;">260,000원</td>
+                  <td style="padding:8px; color:#2563eb; font-weight:700;">330,000원</td>
+                  <td style="padding:8px; color:#b45309; font-weight:700;">420,000원</td>
+                </tr>
+                <tr style="border-bottom:1px solid #e2e8f0;">
+                  <td style="padding:8px; font-weight:700;">타일 (대형/졸리컷)</td>
+                  <td style="padding:8px;">280,000원</td>
+                  <td style="padding:8px; color:#2563eb; font-weight:700;">360,000원</td>
+                  <td style="padding:8px; color:#b45309; font-weight:700;">450,000원</td>
+                </tr>
+                <tr style="border-bottom:1px solid #e2e8f0;">
+                  <td style="padding:8px; font-weight:700;">단열·방수·기밀</td>
+                  <td style="padding:8px;">250,000원</td>
+                  <td style="padding:8px; color:#2563eb; font-weight:700;">320,000원</td>
+                  <td style="padding:8px; color:#b45309; font-weight:700;">400,000원</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px; font-weight:700;">설비·배관·전기</td>
+                  <td style="padding:8px;">270,000원</td>
+                  <td style="padding:8px; color:#2563eb; font-weight:700;">340,000원</td>
+                  <td style="padding:8px; color:#b45309; font-weight:700;">410,000원</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 간편 견적 시뮬레이터 -->
+            <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:14px; margin-top:6px;">
+              <strong style="font-size:13.5px; display:block; margin-bottom:10px;">🧮 공정별 스마트 에스크로 예상 견적 계산기</strong>
+              <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px; margin-bottom:10px;">
+                <div>
+                  <label style="font-size:11.5px; color:var(--text-sub);">공정 선택</label>
+                  <select id="calcTrade" class="form-control" onchange="calculateCost()">
+                    <option value="330000">목공 시공</option>
+                    <option value="360000">타일 시공</option>
+                    <option value="320000">단열/방수 시공</option>
+                    <option value="340000">설비/전기 시공</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:11.5px; color:var(--text-sub);">기술자 등급</label>
+                  <select id="calcTier" class="form-control" onchange="calculateCost()">
+                    <option value="0.82">인증 (Verified)</option>
+                    <option value="1" selected>프로 (Pro)</option>
+                    <option value="1.26">명장 (Master)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:11.5px; color:var(--text-sub);">예상 투입 품수(일×명)</label>
+                  <input type="number" id="calcDays" class="form-control" value="10" min="1" max="200" onchange="calculateCost()" onkeyup="calculateCost()" />
+                </div>
+              </div>
+              <div id="calcOutput" style="background:#0f172a; color:#fff; padding:12px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                <span>권장 에스크로 표준 노무비:</span>
+                <strong style="font-size:17px; color:#38bdf8;">3,300,000원</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 공통 모달 -->
+  <div class="modal-backdrop" id="commonModal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 -->
+  <div class="toast" id="toastBox"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
