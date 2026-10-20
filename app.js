@@ -181,40 +181,44 @@ const globalVideosData = [
   {
     id: "v1",
     country: "일본",
-    type: "YouTube Shorts",
-    title: "[일본 장인 쇼츠] 못을 쓰지 않는 전통 짜맞춤(츠기테) + 현대 내진 철물 하이브리드 목조 공법",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    duration: "0:58 (Shorts)",
-    views: "조회수 4.2만회",
+    type: "YouTube 기술영상",
+    title: "[일본 전통·현대 목조] 못 없이 기둥을 결속하는 고강도 짜맞춤 '카나와츠기(Kanawa Tsugi)' 정밀 시공",
+    youtubeId: "E0QG7rYAADU",
+    youtubeUrl: "https://www.youtube.com/watch?v=E0QG7rYAADU",
+    channelName: "little forest",
+    duration: "목조 짜맞춤 실연",
+    views: "실제 유튜브 인기 영상",
     bgGradient: "linear-gradient(135deg, #1e293b 0%, #3b82f6 100%)",
-    aiSummary: "AI 핵심 공법 번역: 일본 목수(다이쿠)가 CNC 프리컷 가공된 히노키 기둥에 내진 드리프트 핀(Drift Pin)과 전통 주먹장 맞춤을 결합하여 지진 진도 7에도 뒤틀림을 방지하는 기법입니다.",
+    aiSummary: "AI 핵심 공법 번역: 일본 목수(다이쿠)가 프리컷·수공 가공된 목재 기둥을 '카나와츠기(金輪継)' 이음 맞춤과 나무 쐐기(Sen)로 결속하여 지진 하중과 인장력에도 뒤틀림을 방지하는 기법입니다.",
     applicability: {
-      climate: "94% (한국 사계절 습도 변화에 강함)",
-      law: "98% (국내 구조안전 확인 기준 부합)",
-      cost: "78% (프리컷 가공비 초기 상승 있으나 현장 인건비 30% 단축)"
+      climate: "94% (한국 사계절 습도 변화 및 수축·팽창에 강함)",
+      law: "98% (국내 중목구조 구조안전 확인 기준 부합)",
+      cost: "78% (프리컷 가공비 초기 상승 있으나 현장 조립 시간 30% 단축)"
     },
     linkedMaterialId: "m5",
     linkedMaterialName: "프리컷 내진 드리프트핀 & 홀다운 철물 세트",
     verifiedByTechs: ["김태호 명장 (양평 현장에 실제 적용 완료)"],
     comments: [
-      { author: "김태호 명장 (목공/골조)", text: "국내에서도 프리컷 공장이 늘어나면서 이 방식이 대세가 되고 있습니다. 특히 2층 바닥 장선 연결부 소음 잡는 데 최고입니다." },
-      { author: "예비건축주 이OO", text: "쇼츠로 보니까 구조가 한눈에 이해되네요! 내 집 지을 때 꼭 이 공법 가능한 기술자분께 맡기고 싶어요." }
+      { author: "김태호 명장 (목공/골조)", text: "국내에서도 프리컷 공장이 늘어나면서 카나와츠기 이음과 드리프트핀 병행 방식이 대세가 되고 있습니다. 2층 바닥 장선 소음 잡는 데 최고입니다." },
+      { author: "예비건축주 이OO", text: "영상으로 보니까 결속 구조가 한눈에 이해되네요! 내 집 지을 때 꼭 이 공법 가능한 기술자분께 맡기고 싶어요." }
     ]
   },
   {
     id: "v2",
     country: "독일",
     type: "YouTube 기술해설",
-    title: "[독일 패시브 현장] 우레탄폼만 쏘지 마세요! 창호 결로·곰팡이 100% 막는 독일 RAL 3중 기밀 시공법",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    duration: "08:24",
-    views: "조회수 6.8만회",
+    title: "[독일 패시브 창호] 우레탄폼만 쏘지 마세요! 프로클리마 테스콘 프로필(Tescon Profil) 창호 코너 기밀 테이핑",
+    youtubeId: "Yo91YaEMLeE",
+    youtubeUrl: "https://www.youtube.com/watch?v=Yo91YaEMLeE",
+    channelName: "Ecological Building Systems",
+    duration: "창호 기밀 정석 가이드",
+    views: "실제 패시브 시공 교육 영상",
     bgGradient: "linear-gradient(135deg, #065f46 0%, #0f172a 100%)",
-    aiSummary: "AI 핵심 공법 번역: 내부는 투습 저항이 높은 방습 테이프(기밀), 중앙은 팽창형 단열 폼, 외부는 빗물은 막고 내부 습기는 배출하는 투습방수 팽창밴드를 적용하는 3단계 창호 시공 표준입니다.",
+    aiSummary: "AI 핵심 공법 번역: 창호 모서리(코너) 부위의 기밀 테이프 들뜸과 결로를 방지하기 위해 분리형 이형지가 적용된 독일 Pro Clima Tescon Profil 테이프로 3면 코너를 밀착 마감하는 표준 시공법입니다.",
     applicability: {
-      climate: "99% (한국 겨울철 결로 및 여름 장마철 누수 완벽 차단)",
-      law: "100% (국내 에너지절약설계기준 최우수 등급 부합)",
-      cost: "85% (자재비 창호당 약 4~5만원 추가되나 하자 보수비 수백만원 절감)"
+      climate: "99% (한국 겨울철 창가 결로·곰팡이 및 장마철 누수 완벽 차단)",
+      law: "100% (국내 에너지절약설계기준 및 패시브 인증 부합)",
+      cost: "85% (자재비 창호당 약 4~5만원 추가되나 결로 하자 보수비 수백만원 절감)"
     },
     linkedMaterialId: "m1",
     linkedMaterialName: "독일 프로클리마 인텔로 가변형 방습지 & 기밀테이프",
@@ -227,14 +231,16 @@ const globalVideosData = [
     id: "v3",
     country: "북미",
     type: "YouTube Shorts",
-    title: "[미국 장비 쇼츠] 타일 줄눈·수평 작업 속도 3배 높이는 레이저 진동 석션 레벨러 실전 테스트",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    duration: "0:45 (Shorts)",
-    views: "조회수 9.1만회",
+    title: "[미국 장비 쇼츠] 대형 포세린 타일 수평·압착 속도 3배 높이는 전동 진동 석션 레벨러(Vibrating Suction Cup) 실전",
+    youtubeId: "5UyipgBZml8",
+    youtubeUrl: "https://www.youtube.com/shorts/5UyipgBZml8",
+    channelName: "TECHFORGE PRO",
+    duration: "Shorts (숏폼)",
+    views: "실제 타일 장비 쇼츠",
     bgGradient: "linear-gradient(135deg, #7c2d12 0%, #b45309 100%)",
-    aiSummary: "AI 핵심 공법 번역: 1200x600mm 이상 대형 포세린 타일 시공 시 고주파 진동 흡착판으로 타일 뒷면 압착시멘트 공극(빈 공간)을 제거하여 타일 깨짐 하자를 원천 방지하는 장비 시연입니다.",
+    aiSummary: "AI 핵심 공법 번역: 600~1200mm급 대형 타일 시공 시 진공 흡착판으로 타일을 안전하게 들어 올리고, 고주파 진동으로 뒷면 압착시멘트 공극(빈 공간)을 제거해 타일 깨짐 하자를 원천 방지하는 장비 시연입니다.",
     applicability: {
-      climate: "95% (한국식 바닥 온돌 난방 수축·팽창 대응에 매우 유리)",
+      climate: "95% (한국식 바닥 온돌 난방 열전도율 확보 및 수축·팽창 대응에 매우 유리)",
       law: "100% (제한 없음)",
       cost: "92% (장비 도입비 대비 작업 시간 단축 및 타일 파손율 0% 달성)"
     },
@@ -248,23 +254,25 @@ const globalVideosData = [
   {
     id: "v4",
     country: "북유럽",
-    type: "YouTube 다큐/쇼츠",
-    title: "[스웨덴 모듈러 건축] 눈보라 치는 현장에서도 단 3일 만에 골조 완공하는 CLT(구조용 직교집성판) 크레인 조립",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    duration: "05:12",
-    views: "조회수 3.4만회",
+    type: "YouTube 타임랩스",
+    title: "[매스팀버 패시브 건축] CLT(구조용 직교집성판)와 글루램으로 3층 패시브하우스를 고속 조립하는 현장 타임랩스",
+    youtubeId: "1CP_vMZpRIU",
+    youtubeUrl: "https://www.youtube.com/watch?v=1CP_vMZpRIU",
+    channelName: "Naikoon Contracting",
+    duration: "현장 전과정 타임랩스",
+    views: "실제 CLT 시공 타임랩스",
     bgGradient: "linear-gradient(135deg, #312e81 0%, #1e40af 100%)",
-    aiSummary: "AI 핵심 공법 번역: 콘크리트 대신 고강도 공학목재 패널(CLT)을 공장에서 배관·전기 타공까지 마친 상태로 반입해 현장에서 레고처럼 조립하는 친환경 저탄소 건식 공법입니다.",
+    aiSummary: "AI 핵심 공법 번역: 콘크리트 양생 대신 고강도 공학목재 패널(CLT)과 집성목(Glulam)을 공장에서 정밀 CNC 가공해 반입한 뒤 크레인으로 단 며칠 만에 3층 골조를 완성하는 친환경 저탄소 건식 공법입니다.",
     applicability: {
-      climate: "88% (우천 시 방수 양생 커버 필수)",
-      law: "85% (국내 내화구조 인정 범위 지속 확대 중)",
-      cost: "72% (자재 단가는 높으나 공사 기간 50% 단축으로 금융비용 절감)"
+      climate: "88% (우천 시 기밀·방수 양생 커버 병행 필수)",
+      law: "85% (국내 내화구조 및 중층 목조건축 기준 지속 확대 중)",
+      cost: "72% (자재 단가는 높으나 골조 공사 기간 50% 이상 단축으로 금융비용 절감)"
     },
     linkedMaterialId: "m3",
     linkedMaterialName: "3중 로이 아르곤 패시브 시스템창호",
     verifiedByTechs: ["김태호 명장"],
     comments: [
-      { author: "건축주 김OO", text: "공사 기간이 짧아지니 민원 스트레스가 확 줄어들겠네요. 국내 도입 현장이 더 많아졌으면 좋겠습니다." }
+      { author: "건축주 김OO", text: "타임랩스로 보니까 정말 레고 조립하듯 정교하고 빠르네요. 공사 기간이 짧아지니 도심지 민원 걱정도 없겠습니다." }
     ]
   }
 ];
@@ -810,23 +818,32 @@ function filterVideos(country, btnEl) {
   renderVideos(country);
 }
 
+function extractYouTubeId(url) {
+  if (!url) return "E0QG7rYAADU";
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : "E0QG7rYAADU";
+}
+
 function renderVideos(country) {
   const grid = document.getElementById("videoGrid");
   const filtered = country === "전체"
     ? globalVideosData
     : globalVideosData.filter(v => v.country === country);
 
-  grid.innerHTML = filtered.map(v => `
+  grid.innerHTML = filtered.map(v => {
+    const ytId = v.youtubeId || extractYouTubeId(v.youtubeUrl);
+    const thumbUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+    return `
     <article class="card">
       <div class="video-player-box" onclick="openVideoDetailModal('${v.id}')" style="cursor:pointer;">
-        <div class="video-thumb-bg" style="background: ${v.bgGradient};"></div>
+        <div class="video-thumb-bg" style="background-image: linear-gradient(180deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.25) 45%, rgba(15,23,42,0.88) 100%), url('${thumbUrl}'); opacity: 1;"></div>
         <div class="badge-row">
-          <span class="badge badge-dark">🌍 ${v.country} 건축기술</span>
-          <span class="badge" style="background:#ef4444; color:#fff;">▶ ${v.type} (${v.duration})</span>
+          <span class="badge badge-dark">🌍 ${v.country} · ${v.channelName || 'YouTube'}</span>
+          <span class="badge" style="background:#ef4444; color:#fff;">▶ ${v.type}</span>
         </div>
         <div class="play-overlay">▶</div>
         <div style="position:relative; z-index:2;">
-          <div style="font-size:11.5px; color:#cbd5e1;">${v.views} · 클릭하여 영상 재생 및 기술 토론</div>
+          <div style="font-size:11.5px; color:#e2e8f0;">${v.views} · ${v.duration}</div>
           <div style="font-size:15.5px; font-weight:800; line-height:1.35; margin-top:2px;">${v.title}</div>
         </div>
       </div>
@@ -858,33 +875,49 @@ function renderVideos(country) {
 
         <div style="display:flex; gap:8px; margin-top:auto;">
           <button class="btn btn-primary" style="flex:1; justify-content:center;" onclick="openVideoDetailModal('${v.id}')">
-            영상 시청 & 기술자 토론 (${v.comments.length})
+            ▶ 영상 재생 & 토론 (${v.comments.length})
           </button>
+          <a href="${v.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="text-decoration:none;">
+            🔗 유튜브 원본
+          </a>
         </div>
       </div>
     </article>
-  `).join("");
+  `}).join("");
 }
 
 function openVideoDetailModal(videoId) {
   const v = globalVideosData.find(item => item.id === videoId);
   if (!v) return;
+  const ytId = v.youtubeId || extractYouTubeId(v.youtubeUrl);
 
   const html = `
     <div class="badge-row" style="margin-bottom:8px;">
-      <span class="badge badge-blue">🌍 ${v.country} 선진 건축 공법</span>
+      <span class="badge badge-blue">🌍 ${v.country} 선진 건축 공법 (${v.channelName || 'YouTube'})</span>
       <span class="badge badge-amber">${v.type} · ${v.duration}</span>
     </div>
     <h2 style="font-size:19px; margin-bottom:12px;">${v.title}</h2>
 
-    <!-- 인터랙티브 영상 시뮬레이터 플레이어 -->
-    <div style="background:#0f172a; color:#fff; border-radius:12px; padding:28px 20px; text-align:center; margin-bottom:16px; border:2px solid #334155;">
-      <div style="font-size:38px; margin-bottom:8px;">🎬</div>
-      <div style="font-size:15px; font-weight:700; margin-bottom:6px;">유튜브 / 쇼츠 임베드 플레이어 (${v.duration})</div>
-      <p style="font-size:12.5px; color:#cbd5e1; max-width:520px; margin:0 auto 12px;">
-        원본 링크: <a href="${v.youtubeUrl}" target="_blank" style="color:#38bdf8;">${v.youtubeUrl}</a>
-      </p>
-      <div class="ai-summary-box" style="text-align:left; max-width:640px; margin:0 auto;">
+    <!-- 실제 유튜브 임베드 플레이어 -->
+    <div style="background:#0f172a; color:#fff; border-radius:12px; padding:14px; margin-bottom:16px; border:2px solid #334155;">
+      <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; background:#000;">
+        <iframe
+          src="https://www.youtube.com/embed/${ytId}?rel=0"
+          title="${v.title}"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin:12px 0;">
+        <span style="font-size:12.5px; color:#cbd5e1;">
+          원본 유튜브 주소: <a href="${v.youtubeUrl}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:700;">${v.youtubeUrl}</a>
+        </span>
+        <a href="${v.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm" style="text-decoration:none;">
+          ▶ YouTube 새 탭에서 직접 열기
+        </a>
+      </div>
+      <div class="ai-summary-box" style="text-align:left;">
         ${v.aiSummary}
       </div>
     </div>
@@ -938,11 +971,11 @@ function openAddVideoModal() {
     <span class="badge badge-blue">글로벌 건축 기술 큐레이션</span>
     <h2 style="font-size:20px; margin:8px 0;">🎬 세계 각국의 건축 유튜브 / 쇼츠 공유하기</h2>
     <p style="font-size:13px; color:var(--text-sub); margin-bottom:14px;">
-      유튜브 영상이나 쇼츠(Shorts) URL을 입력하면 AI가 자동으로 공법 요약과 한국어 건축 용어 번역을 생성합니다.
+      유튜브 영상이나 쇼츠(Shorts) URL을 입력하면 실제 유튜브 영상 썸네일·플레이어와 함께 AI 공법 요약이 생성됩니다.
     </p>
     <div class="form-group">
-      <label>유튜브 또는 쇼츠(Shorts) URL</label>
-      <input type="text" id="nvUrl" class="form-control" placeholder="https://youtube.com/shorts/..." />
+      <label>유튜브 또는 쇼츠(Shorts) 실제 URL</label>
+      <input type="text" id="nvUrl" class="form-control" placeholder="예: https://www.youtube.com/watch?v=E0QG7rYAADU 또는 https://www.youtube.com/shorts/5UyipgBZml8" />
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
       <div class="form-group">
@@ -974,18 +1007,21 @@ function openAddVideoModal() {
 }
 
 function submitNewVideo() {
-  const title = document.getElementById("nvTitle").value.trim() || "[글로벌 신공법 쇼츠] 레이저 자동 수평 미장 로봇 현장 테스트";
+  const title = document.getElementById("nvTitle").value.trim() || "[글로벌 신공법 쇼츠] 대형 타일 진동 석션 레벨러 현장 시공";
   const country = document.getElementById("nvCountry").value;
   const type = document.getElementById("nvType").value;
-  const url = document.getElementById("nvUrl").value.trim() || "https://www.youtube.com/shorts/example";
+  const url = document.getElementById("nvUrl").value.trim() || "https://www.youtube.com/shorts/5UyipgBZml8";
+  const ytId = extractYouTubeId(url);
 
   globalVideosData.unshift({
     id: "v" + (globalVideosData.length + 1),
     country,
     type,
     title,
+    youtubeId: ytId,
     youtubeUrl: url,
-    duration: type.includes("Shorts") ? "0:50 (Shorts)" : "06:30",
+    channelName: "YouTube Creator",
+    duration: type.includes("Shorts") ? "Shorts (숏폼)" : "기술 영상",
     views: "방금 공유됨",
     bgGradient: "linear-gradient(135deg, #1e3a8a 0%, #9333ea 100%)",
     aiSummary: "AI 핵심 공법 번역: 공유해주신 유튜브 영상의 음성과 자막을 분석하여 공정 순서 및 투입 장비 스펙을 한국어 표준 건축 용어로 자동 번역했습니다.",
